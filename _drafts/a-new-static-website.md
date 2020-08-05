@@ -193,3 +193,18 @@ To github.com:curtisspendlove/knightoftheoldcode-com.git
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 ```
+
+Finally, we'll push `master` to Heroku. Heroku is an awesome little service (ok, they are a vastly huge service) that help you scale from initial concept to full-blown highly-available production apps.
+
+We, however, will also investigate how to build out your own virtual servers to host your site. You can use anything you want, such as AWS, Google, Azure, etc; but I prefer Digital Ocean.
+
+This site, after all, is about learning how to do it the "best practices" way.
+
+But it _never_ hurts to start with the _easy_ way.
+
+```
+$ heroku create knightoftheoldcode-com
+Creating ⬢ knightoftheoldcode-com... done
+https://knightoftheoldcode-com.herokuapp.com/ | https://git.heroku.com/knightoftheoldcode-com.git
+
+```
