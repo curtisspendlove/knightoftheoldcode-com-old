@@ -208,3 +208,179 @@ Creating ⬢ knightoftheoldcode-com... done
 https://knightoftheoldcode-com.herokuapp.com/ | https://git.heroku.com/knightoftheoldcode-com.git
 
 ```
+
+Heroku requires a definition of how your app should run:
+
+`Procfile`:
+
+```
+web: jekyll serve -P $PORT --no-watch --host 0.0.0.0
+```
+
+The `heroku create ...` command should have added a `git remote` endpoint. We can use this to easily deploy changes to Heroku (magic, I daresay).
+
+```
+$ git remote -v
+heroku	https://git.heroku.com/knightoftheoldcode-com.git (fetch)
+heroku	https://git.heroku.com/knightoftheoldcode-com.git (push)
+origin	git@github.com:curtisspendlove/knightoftheoldcode-com.git (fetch)
+origin	git@github.com:curtisspendlove/knightoftheoldcode-com.git (push)
+```
+
+We can publish via `git push heroku`:
+
+````
+$ git push heroku
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (22/22), 7.31 KiB | 3.66 MiB/s, done.
+Total 22 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Ruby app detected
+remote: -----> Installing bundler 2.0.2
+remote: -----> Removing BUNDLED WITH version in the Gemfile.lock
+remote: -----> Compiling Ruby
+remote: -----> Using Ruby version: ruby-2.6.6
+remote: -----> Installing dependencies using bundler 2.0.2
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+remote:        The dependency tzinfo (~> 1.2) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x64-mingw32, x86-mswin32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x64-mingw32 x86-mswin32 java`.
+remote:        The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x64-mingw32, x86-mswin32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x64-mingw32 x86-mswin32 java`.
+remote:        The dependency wdm (~> 0.1.1) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x64-mingw32, x86-mswin32. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x64-mingw32 x86-mswin32`.
+remote:        Fetching gem metadata from https://rubygems.org/.........
+remote:        Fetching public_suffix 4.0.5
+remote:        Using bundler 2.0.2
+remote:        Fetching colorator 1.1.0
+remote:        Fetching concurrent-ruby 1.1.6
+remote:        Installing colorator 1.1.0
+remote:        Installing concurrent-ruby 1.1.6
+remote:        Installing public_suffix 4.0.5
+remote:        Fetching eventmachine 1.2.7
+remote:        Installing eventmachine 1.2.7 with native extensions
+remote:        Fetching http_parser.rb 0.6.0
+remote:        Installing http_parser.rb 0.6.0 with native extensions
+remote:        Fetching ffi 1.13.1
+remote:        Installing ffi 1.13.1 with native extensions
+remote:        Fetching forwardable-extended 2.6.0
+remote:        Installing forwardable-extended 2.6.0
+remote:        Fetching rb-fsevent 0.10.4
+remote:        Installing rb-fsevent 0.10.4
+remote:        Fetching rexml 3.2.4
+remote:        Installing rexml 3.2.4
+remote:        Fetching liquid 4.0.3
+remote:        Installing liquid 4.0.3
+remote:        Fetching mercenary 0.4.0
+remote:        Installing mercenary 0.4.0
+remote:        Fetching rouge 3.21.0
+remote:        Installing rouge 3.21.0
+remote:        Fetching safe_yaml 1.0.5
+remote:        Installing safe_yaml 1.0.5
+remote:        Fetching unicode-display_width 1.7.0
+remote:        Installing unicode-display_width 1.7.0
+remote:        Fetching addressable 2.7.0
+remote:        Installing addressable 2.7.0
+remote:        Fetching i18n 1.8.5
+remote:        Installing i18n 1.8.5
+remote:        Fetching pathutil 0.16.2
+remote:        Installing pathutil 0.16.2
+remote:        Fetching kramdown 2.3.0
+remote:        Installing kramdown 2.3.0
+remote:        Fetching terminal-table 1.8.0
+remote:        Installing terminal-table 1.8.0
+remote:        Fetching kramdown-parser-gfm 1.1.0
+remote:        Installing kramdown-parser-gfm 1.1.0
+remote:        Fetching sassc 2.4.0
+remote:        Fetching rb-inotify 0.10.1
+remote:        Installing rb-inotify 0.10.1
+remote:        Installing sassc 2.4.0 with native extensions
+remote:        Fetching listen 3.2.1
+remote:        Installing listen 3.2.1
+remote:        Fetching jekyll-watch 2.2.1
+remote:        Installing jekyll-watch 2.2.1
+remote:        Fetching em-websocket 0.5.1
+remote:        Installing em-websocket 0.5.1
+remote:        Fetching jekyll-sass-converter 2.1.0
+remote:        Installing jekyll-sass-converter 2.1.0
+remote:        Fetching jekyll 4.1.1
+remote:        Installing jekyll 4.1.1
+remote:        Fetching jekyll-compose 0.12.0
+remote:        Fetching jekyll-seo-tag 2.6.1
+remote:        Fetching jekyll-feed 0.15.0
+remote:        Installing jekyll-compose 0.12.0
+remote:        Installing jekyll-seo-tag 2.6.1
+remote:        Installing jekyll-feed 0.15.0
+remote:        Fetching minima 2.5.1
+remote:        Installing minima 2.5.1
+remote:        Bundle complete! 7 Gemfile dependencies, 32 gems now installed.
+remote:        Gems in the groups development and test were not installed.
+remote:        Bundled gems are installed into `./vendor/bundle`
+remote:        Post-install message from i18n:
+remote:
+remote:        HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+remote:        But that may break your application.
+remote:
+remote:        If you are upgrading your Rails application from an older version of Rails:
+remote:
+remote:        Please check your Rails app for 'config.i18n.fallbacks = true'.
+remote:        If you're using I18n (>= 1.1.0) and Rails (< 5.2.2), this should be
+remote:        'config.i18n.fallbacks = [I18n.default_locale]'.
+remote:        If not, fallbacks will be broken in your app by I18n 1.1.x.
+remote:
+remote:        If you are starting a NEW Rails application, you can ignore this notice.
+remote:
+remote:        For more info see:
+remote:        https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+remote:
+remote:        Bundle completed (197.60s)
+remote:        Cleaning up the bundler cache.
+remote: -----> Detecting rake tasks
+remote:
+remote: ###### WARNING:
+remote:
+remote:        You have not declared a Ruby version in your Gemfile.
+remote:
+remote:        To declare a Ruby version add this line to your Gemfile:
+remote:
+remote:        ```
+remote:        ruby "2.6.6"
+remote:        ```
+remote:
+remote:        For more information see:
+remote:          https://devcenter.heroku.com/articles/ruby-versions
+remote:
+remote:
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> web
+remote:        Default types for buildpack -> console, rake
+remote:
+remote: -----> Compressing...
+remote:        Done: 38.2M
+remote: -----> Launching...
+remote:        Released v4
+remote:        https://knightoftheoldcode-com.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/knightoftheoldcode-com.git
+ * [new branch]      master -> master
+````
+
+Phwew! We get a _lot_ of output from Heroku...but that's good. This helps you know if it was a successful deploy, or what went wrong if not.
+
+Our pretty simple application here shouldn't have any deployment issues. But if you do, try your Google-fu on for size; I bet you can pretty easily fix it. If not, feel free to drop me a line and I'll try to help.
+
+Let's check it out!
+
+```
+$ heroku open
+```
+
+Heroku's CLI utility should launch your browser and open a new tab pointing to your site:
+
+https://[HEROKU_APP_NAME].herokuapp.com/
+
+There's a lot more we can do with Heroku, including custom domains, etc. We'll cover some of that in a future article.
+
+For now, you have a website publicly available to which you can refer people. Imagine how happy you'll be when you get it to a point you're comfortable adding to your resume.
