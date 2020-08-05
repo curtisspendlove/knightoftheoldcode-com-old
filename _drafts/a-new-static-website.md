@@ -383,4 +383,13 @@ https://[HEROKU_APP_NAME].herokuapp.com/
 
 There's a lot more we can do with Heroku, including custom domains, etc. We'll cover some of that in a future article.
 
+The nifty part, for now, if you want to publish any updates, simply make your updates and push them to GitHub and also Heroku:
+
+```
+$ git add .
+$ git commit -m "Add Finishing Touches to 'A New Static Website' Article"
+$ git push origin
+$ git push heroku
+```
+
 For now, you have a website publicly available to which you can refer people. Imagine how happy you'll be when you get it to a point you're comfortable adding to your resume.
