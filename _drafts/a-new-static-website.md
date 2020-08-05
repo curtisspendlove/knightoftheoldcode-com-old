@@ -141,3 +141,55 @@ I'll create a new post (I like the jekyll-compose gem for this, but we'll cover 
 For now, the sample post is sufficient.
 
 We'll initialize a git repo locally and link it to a new repo created on GitHub.
+
+```
+$ git init
+Initialized empty Git repository in /Users/curtisspendlove/src/kotoc/knightoftheoldcode-com/.git/
+
+$ touch README.md
+$ git add .
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   .tool-versions
+	new file:   404.html
+	new file:   Gemfile
+	new file:   Gemfile.lock
+	new file:   README.md
+	new file:   _config.yml
+	new file:   _drafts/a-new-static-website.md
+	new file:   about.markdown
+	new file:   index.markdown
+
+$ git commit -m "A New Jekyll Site"
+[master (root-commit) 0610d96] A New Jekyll Site
+ 10 files changed, 365 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .tool-versions
+ create mode 100644 404.html
+ create mode 100644 Gemfile
+ create mode 100644 Gemfile.lock
+ create mode 100644 README.md
+ create mode 100644 _config.yml
+ create mode 100644 _drafts/a-new-static-website.md
+ create mode 100644 about.markdown
+ create mode 100644 index.markdown
+
+$ git remote add origin git@github.com:curtisspendlove/knightoftheoldcode-com.git
+$ git push -u origin master
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (13/13), 5.80 KiB | 1.93 MiB/s, done.
+Total 13 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:curtisspendlove/knightoftheoldcode-com.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+```
