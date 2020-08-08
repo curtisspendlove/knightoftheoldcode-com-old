@@ -1,8 +1,8 @@
 ---
 layout: post
 title: A New Static Website
+date: 2020-08-07 18:06 -0600
 ---
-
 I'm a fairly persnickety kind of dude. I have very specific ways of doing things.
 
 I generally work from my MacBook, but a linux or Windows system (with WSL, at least) should do.
@@ -10,6 +10,8 @@ I generally work from my MacBook, but a linux or Windows system (with WSL, at le
 I manage my servers and workstations with `Ansible`. But that's a fairly large sidebar. :)
 
 The key portions for this article are `ruby`, which I manage with `asdf`, which in turn is managed with `homebrew`.
+
+## Generate a New Static Site with Jekyll
 
 I like to start a new Jekyll site as follows:
 
@@ -193,6 +195,8 @@ To github.com:curtisspendlove/knightoftheoldcode-com.git
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 ```
+
+## From Your Computer, to Theirs
 
 Finally, we'll push `master` to Heroku. Heroku is an awesome little service (ok, they are a vastly huge service) that help you scale from initial concept to full-blown highly-available production apps.
 
