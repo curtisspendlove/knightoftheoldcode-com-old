@@ -200,7 +200,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 Finally, we'll push `master` to Heroku. Heroku is an awesome little service (ok, they are a vastly huge service) that help you scale from initial concept to full-blown highly-available production apps.
 
-We, however, will also investigate how to build out your own virtual servers to host your site. You can use anything you want, such as AWS, Google, Azure, etc; but I prefer Digital Ocean.
+We, however, will also investigate how to build out your own virtual servers to host your site. You can use anything you want, such as AWS, Google, Azure, etc; but I prefer Linode.
 
 This site, after all, is about learning how to do it the "best practices" way.
 
